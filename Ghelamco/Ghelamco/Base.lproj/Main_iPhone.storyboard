@@ -55,15 +55,27 @@
             <objects>
                 <viewController title="Micro" id="Jyw-B0-mmg" customClass="MicroViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="onE-hG-sMe">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plan.png" id="QV1-Zc-7nK">
-                                <rect key="frame" x="0.0" y="97" width="320" height="309"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="53" width="320" height="309"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointer.png" id="TiA-3Y-AHx">
+                                <rect key="frame" x="103" y="78" width="20" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointer.png" id="JNd-Fa-JbC">
+                                <rect key="frame" x="62" y="250" width="20" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointer.png" id="z9i-pM-nfS">
+                                <rect key="frame" x="280" y="78" width="20" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="xqJ-xm-zSx">
-                                <rect key="frame" x="25" y="455" width="270" height="396"/>
+                                <rect key="frame" x="25" y="367" width="270" height="396"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Seat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nJQ-FO-aMc">
@@ -170,8 +182,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="imagePointer1" destination="TiA-3Y-AHx" id="EnC-uk-Ccz"/>
+                        <outlet property="imagePointer2" destination="z9i-pM-nfS" id="IEM-5M-wvh"/>
+                        <outlet property="imagePointer3" destination="JNd-Fa-JbC" id="dvS-jU-fO1"/>
                         <outlet property="seatView" destination="xqJ-xm-zSx" id="7q9-c5-UKi"/>
                     </connections>
                 </viewController>
@@ -184,11 +199,11 @@
             <objects>
                 <viewController id="Mic-U8-dSG" customClass="CategoryViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iFh-xo-DO5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dPZ-2a-yEd">
-                                <rect key="frame" x="39" y="30" width="153" height="116"/>
+                                <rect key="frame" x="39" y="23" width="153" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Button" image="toilets.png">
@@ -199,7 +214,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p8b-OS-P9v">
-                                <rect key="frame" x="39" y="145" width="155" height="116"/>
+                                <rect key="frame" x="39" y="112" width="155" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Button" image="drinks.png">
@@ -210,7 +225,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Rq4-aV-PfW">
-                                <rect key="frame" x="39" y="260" width="220" height="116"/>
+                                <rect key="frame" x="39" y="201" width="220" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Button" image="foodstands.png">
@@ -221,7 +236,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="drQ-Yp-NIM">
-                                <rect key="frame" x="39" y="375" width="242" height="116"/>
+                                <rect key="frame" x="39" y="290" width="242" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" image="merchandising.png">
@@ -272,6 +287,7 @@
         <image name="lock.png" width="20" height="26"/>
         <image name="merchandising.png" width="241" height="116"/>
         <image name="plan.png" width="320" height="309"/>
+        <image name="pointer.png" width="20" height="25"/>
         <image name="seat.png" width="114" height="116"/>
         <image name="seatButton.png" width="184" height="36"/>
         <image name="toilets.png" width="152" height="116"/>

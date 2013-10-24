@@ -8,6 +8,7 @@
 
 #import "MicroViewController.h"
 #import "Helpers.h"
+#import "CategoryViewController.h"
 
 @interface MicroViewController ()
 
@@ -76,6 +77,23 @@
     }
     
     self.seatViewVisible = !self.seatViewVisible;
+}
+
+#pragma mark - CategoryPickerDelegate
+
+- (void)categoryDidReceiveTap:(NSInteger)type
+{
+    self.imagePointer1.hidden = NO;
+    self.imagePointer2.hidden = NO;
+    self.imagePointer3.hidden = NO;
+}
+
+#pragma mark - storyboards
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    CategoryViewController *c = segue.destinationViewController;
+    c.delegate = self;
 }
 
 #pragma mark - cleanup

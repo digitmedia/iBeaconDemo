@@ -88,6 +88,7 @@
 		82D3576F18194FDF0027DDFB /* foodstands@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foodstands@2x.png"; sourceTree = "<group>"; };
 		82D3577018194FDF0027DDFB /* merchandising@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "merchandising@2x.png"; sourceTree = "<group>"; };
 		82D3577118194FDF0027DDFB /* toilets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toilets@2x.png"; sourceTree = "<group>"; };
+		82D35777181954350027DDFB /* CategoryPickerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryPickerDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +148,7 @@
 		823B8E8F18191316007DBDC7 /* Ghelamco */ = {
 			isa = PBXGroup;
 			children = (
+				82D35776181954250027DDFB /* Protocols */,
 				823B8EC6181947BB007DBDC7 /* Images */,
 				823B8EC4181926D0007DBDC7 /* Helpers */,
 				823B8E9818191316007DBDC7 /* AppDelegate.h */,
@@ -220,6 +222,14 @@
 				823B8EC7181947BB007DBDC7 /* seat@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		82D35776181954250027DDFB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				82D35777181954350027DDFB /* CategoryPickerDelegate.h */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

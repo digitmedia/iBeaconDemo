@@ -25,21 +25,25 @@
 
 - (IBAction)buttonToiletsTapped:(id)sender
 {
+    [self.delegate categoryDidReceiveTap:0];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)buttonDrinksTapped:(id)sender
 {
+    [self.delegate categoryDidReceiveTap:0];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)buttonFoodTapped:(id)sender
 {
+    [self.delegate categoryDidReceiveTap:0];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)buttonMerchandisingTapped:(id)sender
 {
+    [self.delegate categoryDidReceiveTap:0];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
