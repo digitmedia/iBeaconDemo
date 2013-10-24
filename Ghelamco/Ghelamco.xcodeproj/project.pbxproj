@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		823B8E8A18191316007DBDC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B8E8918191316007DBDC7 /* Foundation.framework */; };
+		823B8E8C18191316007DBDC7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B8E8B18191316007DBDC7 /* CoreGraphics.framework */; };
+		823B8E8E18191316007DBDC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B8E8D18191316007DBDC7 /* UIKit.framework */; };
+		823B8E9418191316007DBDC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 823B8E9218191316007DBDC7 /* InfoPlist.strings */; };
+		823B8E9618191316007DBDC7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8E9518191316007DBDC7 /* main.m */; };
+		823B8E9A18191316007DBDC7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8E9918191316007DBDC7 /* AppDelegate.m */; };
+		823B8E9D18191316007DBDC7 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B8E9B18191316007DBDC7 /* Main_iPhone.storyboard */; };
+		823B8EA018191316007DBDC7 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 823B8E9E18191316007DBDC7 /* Main_iPad.storyboard */; };
+		823B8EA318191316007DBDC7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8EA218191316007DBDC7 /* ViewController.m */; };
+		823B8EA518191316007DBDC7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 823B8EA418191316007DBDC7 /* Images.xcassets */; };
+		823B8EAC18191317007DBDC7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B8EAB18191317007DBDC7 /* XCTest.framework */; };
+		823B8EAD18191317007DBDC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B8E8918191316007DBDC7 /* Foundation.framework */; };
+		823B8EAE18191317007DBDC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B8E8D18191316007DBDC7 /* UIKit.framework */; };
+		823B8EB618191317007DBDC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 823B8EB418191317007DBDC7 /* InfoPlist.strings */; };
+		823B8EB818191317007DBDC7 /* GhelamcoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8EB718191317007DBDC7 /* GhelamcoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		823B8EAF18191317007DBDC7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 823B8E7E18191316007DBDC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 823B8E8518191316007DBDC7;
+			remoteInfo = Ghelamco;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		823B8E8618191316007DBDC7 /* Ghelamco.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ghelamco.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		823B8E8918191316007DBDC7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		823B8E8B18191316007DBDC7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		823B8E8D18191316007DBDC7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		823B8E9118191316007DBDC7 /* Ghelamco-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Ghelamco-Info.plist"; sourceTree = "<group>"; };
+		823B8E9318191316007DBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		823B8E9518191316007DBDC7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		823B8E9718191316007DBDC7 /* Ghelamco-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ghelamco-Prefix.pch"; sourceTree = "<group>"; };
+		823B8E9818191316007DBDC7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		823B8E9918191316007DBDC7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		823B8E9C18191316007DBDC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		823B8E9F18191316007DBDC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		823B8EA118191316007DBDC7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		823B8EA218191316007DBDC7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		823B8EA418191316007DBDC7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		823B8EAA18191317007DBDC7 /* GhelamcoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GhelamcoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		823B8EAB18191317007DBDC7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		823B8EB318191317007DBDC7 /* GhelamcoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GhelamcoTests-Info.plist"; sourceTree = "<group>"; };
+		823B8EB518191317007DBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		823B8EB718191317007DBDC7 /* GhelamcoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GhelamcoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		823B8E8318191316007DBDC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823B8E8C18191316007DBDC7 /* CoreGraphics.framework in Frameworks */,
+				823B8E8E18191316007DBDC7 /* UIKit.framework in Frameworks */,
+				823B8E8A18191316007DBDC7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823B8EA718191317007DBDC7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823B8EAC18191317007DBDC7 /* XCTest.framework in Frameworks */,
+				823B8EAE18191317007DBDC7 /* UIKit.framework in Frameworks */,
+				823B8EAD18191317007DBDC7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		823B8E7D18191316007DBDC7 = {
+			isa = PBXGroup;
+			children = (
+				823B8E8F18191316007DBDC7 /* Ghelamco */,
+				823B8EB118191317007DBDC7 /* GhelamcoTests */,
+				823B8E8818191316007DBDC7 /* Frameworks */,
+				823B8E8718191316007DBDC7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		823B8E8718191316007DBDC7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				823B8E8618191316007DBDC7 /* Ghelamco.app */,
+				823B8EAA18191317007DBDC7 /* GhelamcoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		823B8E8818191316007DBDC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				823B8E8918191316007DBDC7 /* Foundation.framework */,
+				823B8E8B18191316007DBDC7 /* CoreGraphics.framework */,
+				823B8E8D18191316007DBDC7 /* UIKit.framework */,
+				823B8EAB18191317007DBDC7 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		823B8E8F18191316007DBDC7 /* Ghelamco */ = {
+			isa = PBXGroup;
+			children = (
+				823B8E9818191316007DBDC7 /* AppDelegate.h */,
+				823B8E9918191316007DBDC7 /* AppDelegate.m */,
+				823B8E9B18191316007DBDC7 /* Main_iPhone.storyboard */,
+				823B8E9E18191316007DBDC7 /* Main_iPad.storyboard */,
+				823B8EA118191316007DBDC7 /* ViewController.h */,
+				823B8EA218191316007DBDC7 /* ViewController.m */,
+				823B8EA418191316007DBDC7 /* Images.xcassets */,
+				823B8E9018191316007DBDC7 /* Supporting Files */,
+			);
+			path = Ghelamco;
+			sourceTree = "<group>";
+		};
+		823B8E9018191316007DBDC7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				823B8E9118191316007DBDC7 /* Ghelamco-Info.plist */,
+				823B8E9218191316007DBDC7 /* InfoPlist.strings */,
+				823B8E9518191316007DBDC7 /* main.m */,
+				823B8E9718191316007DBDC7 /* Ghelamco-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		823B8EB118191317007DBDC7 /* GhelamcoTests */ = {
+			isa = PBXGroup;
+			children = (
+				823B8EB718191317007DBDC7 /* GhelamcoTests.m */,
+				823B8EB218191317007DBDC7 /* Supporting Files */,
+			);
+			path = GhelamcoTests;
+			sourceTree = "<group>";
+		};
+		823B8EB218191317007DBDC7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				823B8EB318191317007DBDC7 /* GhelamcoTests-Info.plist */,
+				823B8EB418191317007DBDC7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		823B8E8518191316007DBDC7 /* Ghelamco */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 823B8EBB18191317007DBDC7 /* Build configuration list for PBXNativeTarget "Ghelamco" */;
+			buildPhases = (
+				823B8E8218191316007DBDC7 /* Sources */,
+				823B8E8318191316007DBDC7 /* Frameworks */,
+				823B8E8418191316007DBDC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Ghelamco;
+			productName = Ghelamco;
+			productReference = 823B8E8618191316007DBDC7 /* Ghelamco.app */;
+			productType = "com.apple.product-type.application";
+		};
+		823B8EA918191317007DBDC7 /* GhelamcoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 823B8EBE18191317007DBDC7 /* Build configuration list for PBXNativeTarget "GhelamcoTests" */;
+			buildPhases = (
+				823B8EA618191317007DBDC7 /* Sources */,
+				823B8EA718191317007DBDC7 /* Frameworks */,
+				823B8EA818191317007DBDC7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				823B8EB018191317007DBDC7 /* PBXTargetDependency */,
+			);
+			name = GhelamcoTests;
+			productName = GhelamcoTests;
+			productReference = 823B8EAA18191317007DBDC7 /* GhelamcoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		823B8E7E18191316007DBDC7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Spencer Pieters";
+				TargetAttributes = {
+					823B8EA918191317007DBDC7 = {
+						TestTargetID = 823B8E8518191316007DBDC7;
+					};
+				};
+			};
+			buildConfigurationList = 823B8E8118191316007DBDC7 /* Build configuration list for PBXProject "Ghelamco" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 823B8E7D18191316007DBDC7;
+			productRefGroup = 823B8E8718191316007DBDC7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				823B8E8518191316007DBDC7 /* Ghelamco */,
+				823B8EA918191317007DBDC7 /* GhelamcoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		823B8E8418191316007DBDC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823B8EA018191316007DBDC7 /* Main_iPad.storyboard in Resources */,
+				823B8EA518191316007DBDC7 /* Images.xcassets in Resources */,
+				823B8E9D18191316007DBDC7 /* Main_iPhone.storyboard in Resources */,
+				823B8E9418191316007DBDC7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823B8EA818191317007DBDC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823B8EB618191317007DBDC7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		823B8E8218191316007DBDC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823B8EA318191316007DBDC7 /* ViewController.m in Sources */,
+				823B8E9A18191316007DBDC7 /* AppDelegate.m in Sources */,
+				823B8E9618191316007DBDC7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		823B8EA618191317007DBDC7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				823B8EB818191317007DBDC7 /* GhelamcoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		823B8EB018191317007DBDC7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 823B8E8518191316007DBDC7 /* Ghelamco */;
+			targetProxy = 823B8EAF18191317007DBDC7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		823B8E9218191316007DBDC7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				823B8E9318191316007DBDC7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		823B8E9B18191316007DBDC7 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				823B8E9C18191316007DBDC7 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		823B8E9E18191316007DBDC7 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				823B8E9F18191316007DBDC7 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		823B8EB418191317007DBDC7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				823B8EB518191317007DBDC7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		823B8EB918191317007DBDC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		823B8EBA18191317007DBDC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		823B8EBC18191317007DBDC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ghelamco/Ghelamco-Prefix.pch";
+				INFOPLIST_FILE = "Ghelamco/Ghelamco-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		823B8EBD18191317007DBDC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ghelamco/Ghelamco-Prefix.pch";
+				INFOPLIST_FILE = "Ghelamco/Ghelamco-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		823B8EBF18191317007DBDC7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ghelamco.app/Ghelamco";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ghelamco/Ghelamco-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GhelamcoTests/GhelamcoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		823B8EC018191317007DBDC7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Ghelamco.app/Ghelamco";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Ghelamco/Ghelamco-Prefix.pch";
+				INFOPLIST_FILE = "GhelamcoTests/GhelamcoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		823B8E8118191316007DBDC7 /* Build configuration list for PBXProject "Ghelamco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				823B8EB918191317007DBDC7 /* Debug */,
+				823B8EBA18191317007DBDC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		823B8EBB18191317007DBDC7 /* Build configuration list for PBXNativeTarget "Ghelamco" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				823B8EBC18191317007DBDC7 /* Debug */,
+				823B8EBD18191317007DBDC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		823B8EBE18191317007DBDC7 /* Build configuration list for PBXNativeTarget "GhelamcoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				823B8EBF18191317007DBDC7 /* Debug */,
+				823B8EC018191317007DBDC7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 823B8E7E18191316007DBDC7 /* Project object */;
+}
