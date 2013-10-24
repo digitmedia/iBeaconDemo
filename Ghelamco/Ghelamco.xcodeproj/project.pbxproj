@@ -58,6 +58,7 @@
 		823B8EB718191317007DBDC7 /* GhelamcoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GhelamcoTests.m; sourceTree = "<group>"; };
 		823B8EC118191774007DBDC7 /* MicroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroViewController.h; sourceTree = "<group>"; };
 		823B8EC218191774007DBDC7 /* MicroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroViewController.m; sourceTree = "<group>"; };
+		823B8EC5181926E4007DBDC7 /* Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helpers.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +118,7 @@
 		823B8E8F18191316007DBDC7 /* Ghelamco */ = {
 			isa = PBXGroup;
 			children = (
+				823B8EC4181926D0007DBDC7 /* Helpers */,
 				823B8E9818191316007DBDC7 /* AppDelegate.h */,
 				823B8E9918191316007DBDC7 /* AppDelegate.m */,
 				823B8E9B18191316007DBDC7 /* Main_iPhone.storyboard */,
@@ -158,6 +160,14 @@
 				823B8EB418191317007DBDC7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		823B8EC4181926D0007DBDC7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				823B8EC5181926E4007DBDC7 /* Helpers.h */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

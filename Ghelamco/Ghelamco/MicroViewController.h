@@ -10,6 +10,7 @@
 
 @interface MicroViewController : UIViewController
 
+@property (nonatomic, assign) BOOL seatViewVisible;
 @property (weak, nonatomic) IBOutlet UIView *seatView;
 
 @end
