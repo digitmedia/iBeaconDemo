@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CategoryPickerDelegate.h"
 
 @interface CategoryViewController : UIViewController
+
+@property (nonatomic, weak) id<CategoryPickerDelegate> delegate;
 
 - (IBAction)buttonToiletsTapped:(id)sender;
 - (IBAction)buttonDrinksTapped:(id)sender;
