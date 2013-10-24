@@ -36,12 +36,17 @@
     {
         if (IS_IPHONE_5)
         {
-            
+            [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 455, self.seatView.frame.size.width, 474);
+                self.seatView.frame = frame;
+            } completion:^(BOOL finished) {
+                
+            }];
         }
         else
         {
             [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 320, self.seatView.frame.size.width, self.seatView.frame.size.height);
+                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 367, self.seatView.frame.size.width, 396);
                 self.seatView.frame = frame;
             } completion:^(BOOL finished) {
                 
@@ -52,17 +57,18 @@
     {
         if (IS_IPHONE_5)
         {
-            
+            [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 30, self.seatView.frame.size.width, 474);
+                self.seatView.frame = frame;
+            } completion:^(BOOL finished) {
+                
+            }];
         }
         else
         {
             [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                [UIView animateWithDuration:1. delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                    CGRect frame = CGRectMake(self.seatView.frame.origin.x, 20, self.seatView.frame.size.width, self.seatView.frame.size.height);
-                    self.seatView.frame = frame;
-                } completion:^(BOOL finished) {
-                    
-                }];
+                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 20, self.seatView.frame.size.width, 396);
+                self.seatView.frame = frame;
             } completion:^(BOOL finished) {
                 
             }];
