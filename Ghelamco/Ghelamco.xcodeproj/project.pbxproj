@@ -22,6 +22,7 @@
 		823B8EAE18191317007DBDC7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 823B8E8D18191316007DBDC7 /* UIKit.framework */; };
 		823B8EB618191317007DBDC7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 823B8EB418191317007DBDC7 /* InfoPlist.strings */; };
 		823B8EB818191317007DBDC7 /* GhelamcoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8EB718191317007DBDC7 /* GhelamcoTests.m */; };
+		823B8EC318191774007DBDC7 /* MicroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 823B8EC218191774007DBDC7 /* MicroViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		823B8EB318191317007DBDC7 /* GhelamcoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GhelamcoTests-Info.plist"; sourceTree = "<group>"; };
 		823B8EB518191317007DBDC7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		823B8EB718191317007DBDC7 /* GhelamcoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GhelamcoTests.m; sourceTree = "<group>"; };
+		823B8EC118191774007DBDC7 /* MicroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicroViewController.h; sourceTree = "<group>"; };
+		823B8EC218191774007DBDC7 /* MicroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicroViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				823B8EA218191316007DBDC7 /* ViewController.m */,
 				823B8EA418191316007DBDC7 /* Images.xcassets */,
 				823B8E9018191316007DBDC7 /* Supporting Files */,
+				823B8EC118191774007DBDC7 /* MicroViewController.h */,
+				823B8EC218191774007DBDC7 /* MicroViewController.m */,
 			);
 			path = Ghelamco;
 			sourceTree = "<group>";
@@ -254,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				823B8EA318191316007DBDC7 /* ViewController.m in Sources */,
+				823B8EC318191774007DBDC7 /* MicroViewController.m in Sources */,
 				823B8E9A18191316007DBDC7 /* AppDelegate.m in Sources */,
 				823B8E9618191316007DBDC7 /* main.m in Sources */,
 			);
@@ -474,6 +480,7 @@
 				823B8EBD18191317007DBDC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		823B8EBE18191317007DBDC7 /* Build configuration list for PBXNativeTarget "GhelamcoTests" */ = {
 			isa = XCConfigurationList;
@@ -482,6 +489,7 @@
 				823B8EC018191317007DBDC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
