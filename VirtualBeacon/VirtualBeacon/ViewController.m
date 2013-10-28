@@ -37,8 +37,10 @@
 - (IBAction)playBeaconTapped:(id)sender
 {
     NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"1CF83B1B-C8BC-4F2C-A18B-337E0FC6B33B"];
+    NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
+    NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
     
-    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id major:10 minor:1 identifier:@"id1"];
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id major:[majorid integerValue] minor:[minorid integerValue] identifier:@"id1"];
     self.options = [region peripheralDataWithMeasuredPower:nil];
     
     self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue() options:self.options];
@@ -54,7 +56,10 @@
         
         [peripheral startAdvertising:self.options];
         
-        self.labelInfo.text = @"Device speelt nu voor beacon met UUID 1CF83B1B-C8BC-4F2C-A18B-337E0FC6B33B";
+        NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
+        NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
+        
+        self.labelInfo.text = [NSString stringWithFormat:@"Beacon met UUID 1CF83B1B-C8BC-4F2C-A18B-337E0FC6B33B, major %@, minor %@", majorid, minorid];
     }
 }
 
@@ -67,13 +72,13 @@
 {
     NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"1CF83B1B-C8BC-4F2C-A18B-337E0FC6B33B"];
     
-    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id major:10 minor:1 identifier:@"id1"];
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
     [self.manager startRangingBeaconsInRegion:region];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-    NSLog(@"Region %@ - %d beacons gevonden", region.proximityUUID, beacons.count);
+    NSLog(@"Region %@ - %lu beacons gevonden", region.proximityUUID, (unsigned long)beacons.count);
     
     if (beacons.count > 0)
     {
@@ -99,7 +104,7 @@
         
         self.labelInfo.text = distance;
         
-        NSLog(@"Beacon found with major id %ld and minor id %d, proximity %@", (long)[beacon.major integerValue], [beacon.minor integerValue], distance);
+        NSLog(@"Beacon found with major id %ld and minor id %ld, proximity %@", (long)[beacon.major integerValue], (long)[beacon.minor integerValue], distance);
     }
 }
 

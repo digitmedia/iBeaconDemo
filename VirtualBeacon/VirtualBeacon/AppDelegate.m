@@ -12,7 +12,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
+    NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
+    
+    if (!majorid)
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:@"10" forKey:@"majorid"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    if (!minorid)
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:@"1" forKey:@"minorid"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     return YES;
 }
 							

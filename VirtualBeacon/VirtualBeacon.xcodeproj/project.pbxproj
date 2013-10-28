@@ -24,6 +24,7 @@
 		825B6898181EBA590075E506 /* VirtualBeaconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 825B6897181EBA590075E506 /* VirtualBeaconTests.m */; };
 		825B68A2181EBEB80075E506 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B68A1181EBEB80075E506 /* CoreLocation.framework */; };
 		825B68A4181EBEBF0075E506 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825B68A3181EBEBF0075E506 /* CoreBluetooth.framework */; };
+		825B68A7181EC4C50075E506 /* ConfigController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825B68A6181EC4C50075E506 /* ConfigController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		825B6897181EBA590075E506 /* VirtualBeaconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VirtualBeaconTests.m; sourceTree = "<group>"; };
 		825B68A1181EBEB80075E506 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		825B68A3181EBEBF0075E506 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		825B68A5181EC4C50075E506 /* ConfigController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigController.h; sourceTree = "<group>"; };
+		825B68A6181EC4C50075E506 /* ConfigController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +133,8 @@
 				825B6882181EBA580075E506 /* ViewController.m */,
 				825B6884181EBA580075E506 /* Images.xcassets */,
 				825B6870181EBA580075E506 /* Supporting Files */,
+				825B68A5181EC4C50075E506 /* ConfigController.h */,
+				825B68A6181EC4C50075E506 /* ConfigController.m */,
 			);
 			path = VirtualBeacon;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				825B6883181EBA580075E506 /* ViewController.m in Sources */,
 				825B687A181EBA580075E506 /* AppDelegate.m in Sources */,
 				825B6876181EBA580075E506 /* main.m in Sources */,
+				825B68A7181EC4C50075E506 /* ConfigController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +488,7 @@
 				825B689D181EBA590075E506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		825B689E181EBA590075E506 /* Build configuration list for PBXNativeTarget "VirtualBeaconTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +497,7 @@
 				825B68A0181EBA590075E506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
