@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "CategoryPickerDelegate.h"
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface MicroViewController : UIViewController <CategoryPickerDelegate>
+@interface MicroViewController : UIViewController <CategoryPickerDelegate, CLLocationManagerDelegate>
+{
+    CLLocationManager *manager;
+    BOOL seatViewVisible;
+    BOOL couponViewVisible;
+}
 
-@property (nonatomic, assign) BOOL seatViewVisible;
 @property (weak, nonatomic) IBOutlet UIView *seatView;
-@property (weak, nonatomic) IBOutlet UIImageView *imagePointer1;
-@property (weak, nonatomic) IBOutlet UIImageView *imagePointer2;
-@property (weak, nonatomic) IBOutlet UIImageView *imagePointer3;
+@property (weak, nonatomic) IBOutlet MKMapView *mapViewMain;
+@property (weak, nonatomic) IBOutlet UIView *couponView;
 
 @end
