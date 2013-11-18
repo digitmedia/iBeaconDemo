@@ -12,12 +12,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSString *uuid = [[NSUserDefaults standardUserDefaults] stringForKey:@"uuid"];
     NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
     NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
     
+    if (!uuid)
+    {
+        [[NSUserDefaults standardUserDefaults] setValue:@"ba74d9f8-a327-4b4c-b595-67980540f27c" forKey:@"uuid"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     if (!majorid)
     {
-        [[NSUserDefaults standardUserDefaults] setValue:@"10" forKey:@"majorid"];
+        [[NSUserDefaults standardUserDefaults] setValue:@"100" forKey:@"majorid"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     

@@ -27,9 +27,11 @@
 {
     [super viewDidLoad];
     
+    NSString *uuid = [[NSUserDefaults standardUserDefaults] stringForKey:@"uuid"];
     NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
     NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
     
+    self.labelUUID.text = uuid;
     self.labelMajor.text = majorid;
     self.labelMinor.text = minorid;
 }
@@ -40,9 +42,11 @@
 {
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound)
     {
+        NSString *uuid = self.labelUUID.text;
         NSString *majorid = self.labelMajor.text;
         NSString *minorid = self.labelMinor.text;
         
+        [[NSUserDefaults standardUserDefaults] setValue:uuid forKey:@"uuid"];
         [[NSUserDefaults standardUserDefaults] setValue:majorid forKey:@"majorid"];
         [[NSUserDefaults standardUserDefaults] setValue:minorid forKey:@"minorid"];
         [[NSUserDefaults standardUserDefaults] synchronize];

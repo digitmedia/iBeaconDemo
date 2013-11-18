@@ -36,7 +36,7 @@
 
 - (IBAction)playBeaconTapped:(id)sender
 {
-    NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"1CF83B1B-C8BC-4F2C-A18B-337E0FC6B33B"];
+    NSUUID *id = [[NSUUID alloc] initWithUUIDString:[[NSUserDefaults standardUserDefaults] stringForKey:@"uuid"]];
     NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
     NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
     
@@ -56,10 +56,11 @@
         
         [peripheral startAdvertising:self.options];
         
+        NSString *uuid = [[NSUserDefaults standardUserDefaults] stringForKey:@"uuid"];
         NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
         NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
         
-        self.labelInfo.text = [NSString stringWithFormat:@"Beacon met UUID 1CF83B1B-C8BC-4F2C-A18B-337E0FC6B33B, major %@, minor %@", majorid, minorid];
+        self.labelInfo.text = [NSString stringWithFormat:@"Beacon met UUID %@, major %@, minor %@", uuid, majorid, minorid];
     }
 }
 
@@ -70,7 +71,7 @@
 
 - (IBAction)searchBeaconsTapped:(id)sender
 {
-    NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"1CF83B1B-C8BC-4F2C-A18B-337E0FC6B33B"];
+    NSUUID *id = [[NSUUID alloc] initWithUUIDString:[[NSUserDefaults standardUserDefaults] stringForKey:@"uuid"]];
     
     CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
     [self.manager startRangingBeaconsInRegion:region];
@@ -82,7 +83,7 @@
     
     if (beacons.count > 0)
     {
-        CLBeacon *beacon = beacons[0];
+        /*CLBeacon *beacon = beacons[0];
         
         NSString *distance = nil;
         if (beacon.proximity == CLProximityFar)
@@ -102,15 +103,170 @@
             distance = @"Unknown";
         }
         
-        self.labelInfo.text = distance;
+        self.labelInfo.text = [NSString stringWithFormat:@"Dichtst: major %ld, minor %ld, distance %@", (long)[beacon.major integerValue], (long)[beacon.minor integerValue], distance];
         
-        NSLog(@"Beacon found with major id %ld and minor id %ld, proximity %@", (long)[beacon.major integerValue], (long)[beacon.minor integerValue], distance);
+        NSLog(@"Beacon found with uuid %@ major id %ld and minor id %ld, proximity %@", beacon.proximityUUID, (long)[beacon.major integerValue], (long)[beacon.minor integerValue], distance);*/
+        
+        
+        // Verwijder alle beacons uit de array met status unknown
+        
+        // Sorteer op proximity (immediate, near, far, unknown)
+        /*NSArray *proximityBeacons = [beacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            
+            CLBeacon *beacon1 = (CLBeacon*)obj1;
+            CLBeacon *beacon2 = (CLBeacon*)obj2;
+            
+            if ((beacon1.proximity == CLProximityUnknown) && (beacon2.proximity == CLProximityUnknown))
+            {
+                return NSOrderedSame;
+            }
+            else if ((beacon1.proximity == CLProximityUnknown) && (beacon2.proximity != CLProximityUnknown))
+            {
+                return NSOrderedDescending;
+            }
+            else if ((beacon1.proximity != CLProximityUnknown) && (beacon2.proximity == CLProximityUnknown))
+            {
+                return NSOrderedAscending;
+            }
+            else
+            {
+                if (beacon1.proximity < beacon2.proximity)
+                {
+                    return NSOrderedAscending;
+                }
+                else
+                {
+                    return NSOrderedDescending;
+                }
+            }
+            
+        }];*/
+        
+        // Sorteer op distance
+        currentBeacons = [beacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            
+            CLBeacon *beacon1 = (CLBeacon*)obj1;
+            CLBeacon *beacon2 = (CLBeacon*)obj2;
+            
+            // Score berekenen van 1 en 2
+            
+            NSInteger proximityScore1 = 0;
+            NSInteger proximityScore2 = 0;
+            
+            if (beacon1.proximity != CLProximityUnknown)
+            {
+                proximityScore1 = 10 / beacon1.proximity;
+            }
+            else
+            {
+                proximityScore1 = 1;
+            }
+            
+            if (beacon2.proximity != CLProximityUnknown)
+            {
+                proximityScore2 = 10 / beacon2.proximity;
+            }
+            else
+            {
+                proximityScore2 = 1;
+            }
+            
+            NSInteger distanceScore1 = 0;
+            NSInteger distanceScore2 = 0;
+            
+            if (beacon1.accuracy != 0)
+            {
+                distanceScore1 = 10 / beacon1.accuracy;
+            }
+            else
+            {
+                distanceScore1 = 1;
+            }
+            
+            if (beacon2.accuracy != 0)
+            {
+                distanceScore2 = 10 / beacon2.accuracy;
+            }
+            else
+            {
+                distanceScore2 = 1;
+            }
+            
+            NSInteger score1 = proximityScore1 * distanceScore1;
+            NSInteger score2 = proximityScore2 * distanceScore2;
+            
+            if (score1 < score2)
+            {
+                return NSOrderedDescending;
+            }
+            else
+            {
+                return NSOrderedAscending;
+            }
+            
+        }];
+        
+        [self.tableViewBeacons reloadData];
     }
 }
 
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error
 {
     NSLog(@"%@ %@", @"Beacon not found with error", error.localizedDescription);
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
+{
+    if (currentBeacons.count > 0)
+    {
+        return 1;
+    }
+    
+    return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    //NSInteger row = [indexPath row];
+    CLBeacon *beacon = currentBeacons[0];
+    
+    NSString *distance = nil;
+    if (beacon.proximity == CLProximityFar)
+    {
+        distance = [NSString stringWithFormat:@"Far, %1.2fm", beacon.accuracy];
+    }
+    else if (beacon.proximity == CLProximityImmediate)
+    {
+        distance = [NSString stringWithFormat:@"Immediate, %1.2fm", beacon.accuracy];
+    }
+    else if (beacon.proximity == CLProximityNear)
+    {
+        distance = [NSString stringWithFormat:@"Near, %1.2fm", beacon.accuracy];
+    }
+    else
+    {
+        distance = @"Unknown";
+    }
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld.%ld - %@ - %ld", (long)[beacon.major integerValue], (long)[beacon.minor integerValue], distance, (long)beacon.rssi];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44;
 }
 
 @end

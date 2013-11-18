@@ -10,6 +10,7 @@
 
 @interface ConfigController : UIViewController <UINavigationControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextField *labelUUID;
 @property (weak, nonatomic) IBOutlet UITextField *labelMajor;
 @property (weak, nonatomic) IBOutlet UITextField *labelMinor;
 

@@ -11,8 +11,12 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 
 @interface ViewController : UIViewController <CLLocationManagerDelegate, CBPeripheralManagerDelegate>
+{
+    NSArray *currentBeacons;
+}
 
 @property (weak, nonatomic) IBOutlet UILabel *labelInfo;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewBeacons;
 
 - (IBAction)playBeaconTapped:(id)sender;
 - (IBAction)searchBeaconsTapped:(id)sender;
