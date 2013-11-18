@@ -79,7 +79,7 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-    NSLog(@"Region %@ - %lu beacons gevonden", region.proximityUUID, (unsigned long)beacons.count);
+    //NSLog(@"Region %@ - %lu beacons gevonden", region.proximityUUID, (unsigned long)beacons.count);
     
     if (beacons.count > 0)
     {
