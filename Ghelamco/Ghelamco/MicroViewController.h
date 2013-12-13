@@ -16,6 +16,7 @@
     CLLocationManager *manager;
     BOOL seatViewVisible;
     BOOL couponViewVisible;
+    NSMutableArray *archivedCoupons;
 }
 
 @property (weak, nonatomic) IBOutlet UIView *seatView;

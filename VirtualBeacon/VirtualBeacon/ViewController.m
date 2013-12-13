@@ -60,7 +60,7 @@
         NSString *majorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"majorid"];
         NSString *minorid = [[NSUserDefaults standardUserDefaults] stringForKey:@"minorid"];
         
-        self.labelInfo.text = [NSString stringWithFormat:@"Beacon met UUID %@, major %@, minor %@", uuid, majorid, minorid];
+        self.labelInfo.text = [NSString stringWithFormat:@"Broadcasting as %@.%@", majorid, minorid];
     }
 }
 
@@ -79,70 +79,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-    //NSLog(@"Region %@ - %lu beacons gevonden", region.proximityUUID, (unsigned long)beacons.count);
-    
     if (beacons.count > 0)
     {
-        /*CLBeacon *beacon = beacons[0];
-        
-        NSString *distance = nil;
-        if (beacon.proximity == CLProximityFar)
-        {
-            distance = [NSString stringWithFormat:@"Far, %f metres", beacon.accuracy];
-        }
-        else if (beacon.proximity == CLProximityImmediate)
-        {
-            distance = [NSString stringWithFormat:@"Immediate, %f metres", beacon.accuracy];
-        }
-        else if (beacon.proximity == CLProximityNear)
-        {
-            distance = [NSString stringWithFormat:@"Near, %f metres", beacon.accuracy];
-        }
-        else
-        {
-            distance = @"Unknown";
-        }
-        
-        self.labelInfo.text = [NSString stringWithFormat:@"Dichtst: major %ld, minor %ld, distance %@", (long)[beacon.major integerValue], (long)[beacon.minor integerValue], distance];
-        
-        NSLog(@"Beacon found with uuid %@ major id %ld and minor id %ld, proximity %@", beacon.proximityUUID, (long)[beacon.major integerValue], (long)[beacon.minor integerValue], distance);*/
-        
-        
-        // Verwijder alle beacons uit de array met status unknown
-        
-        // Sorteer op proximity (immediate, near, far, unknown)
-        /*NSArray *proximityBeacons = [beacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-            
-            CLBeacon *beacon1 = (CLBeacon*)obj1;
-            CLBeacon *beacon2 = (CLBeacon*)obj2;
-            
-            if ((beacon1.proximity == CLProximityUnknown) && (beacon2.proximity == CLProximityUnknown))
-            {
-                return NSOrderedSame;
-            }
-            else if ((beacon1.proximity == CLProximityUnknown) && (beacon2.proximity != CLProximityUnknown))
-            {
-                return NSOrderedDescending;
-            }
-            else if ((beacon1.proximity != CLProximityUnknown) && (beacon2.proximity == CLProximityUnknown))
-            {
-                return NSOrderedAscending;
-            }
-            else
-            {
-                if (beacon1.proximity < beacon2.proximity)
-                {
-                    return NSOrderedAscending;
-                }
-                else
-                {
-                    return NSOrderedDescending;
-                }
-            }
-            
-        }];*/
-        
-        // Sorteer op distance
         currentBeacons = [beacons sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
             
             CLBeacon *beacon1 = (CLBeacon*)obj1;

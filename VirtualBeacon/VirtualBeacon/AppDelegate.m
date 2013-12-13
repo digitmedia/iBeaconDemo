@@ -18,7 +18,7 @@
     
     if (!uuid)
     {
-        [[NSUserDefaults standardUserDefaults] setValue:@"ba74d9f8-a327-4b4c-b595-67980540f27c" forKey:@"uuid"];
+        [[NSUserDefaults standardUserDefaults] setValue:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D" forKey:@"uuid"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     

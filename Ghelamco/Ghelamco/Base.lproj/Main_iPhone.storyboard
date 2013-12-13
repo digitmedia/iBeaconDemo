@@ -67,7 +67,7 @@
                                 </connections>
                             </mapView>
                             <view contentMode="scaleToFill" id="xqJ-xm-zSx">
-                                <rect key="frame" x="25" y="367" width="270" height="396"/>
+                                <rect key="frame" x="25" y="417" width="270" height="396"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Seat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nJQ-FO-aMc">
@@ -161,7 +161,7 @@
                                 <color key="backgroundColor" red="0.89411764705882346" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" id="PvW-QB-GJa">
-                                <rect key="frame" x="25" y="367" width="270" height="396"/>
+                                <rect key="frame" x="25" y="417" width="270" height="396"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coupon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lL3-6u-hah">

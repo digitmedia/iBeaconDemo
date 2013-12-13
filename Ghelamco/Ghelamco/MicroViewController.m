@@ -28,6 +28,8 @@
     seatViewVisible = NO;
     couponViewVisible = NO;
     
+    archivedCoupons = [[NSMutableArray alloc] init];
+    
     manager = [[CLLocationManager alloc] init];
     manager.delegate = self;
     [manager startUpdatingLocation];
@@ -65,7 +67,7 @@
         if (IS_IPHONE_5)
         {
             [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 455, self.seatView.frame.size.width, 474);
+                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 505, self.seatView.frame.size.width, 474);
                 self.seatView.frame = frame;
             } completion:^(BOOL finished) {
                 
@@ -74,12 +76,16 @@
         else
         {
             [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 367, self.seatView.frame.size.width, 396);
+                CGRect frame = CGRectMake(self.seatView.frame.origin.x, 417, self.seatView.frame.size.width, 396);
                 self.seatView.frame = frame;
             } completion:^(BOOL finished) {
                 
             }];
         }
+        
+        // Markeer als gearchiveerd
+        
+        [archivedCoupons addObject:@"seat"];
     }
     else
     {
@@ -113,7 +119,7 @@
         if (IS_IPHONE_5)
         {
             [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                CGRect frame = CGRectMake(self.couponView.frame.origin.x, 455, self.couponView.frame.size.width, 474);
+                CGRect frame = CGRectMake(self.couponView.frame.origin.x, 505, self.couponView.frame.size.width, 474);
                 self.couponView.frame = frame;
             } completion:^(BOOL finished) {
                 
@@ -122,12 +128,16 @@
         else
         {
             [UIView animateWithDuration:0.4 delay:0. options:UIViewAnimationOptionCurveEaseInOut animations:^{
-                CGRect frame = CGRectMake(self.couponView.frame.origin.x, 367, self.couponView.frame.size.width, 396);
+                CGRect frame = CGRectMake(self.couponView.frame.origin.x, 417, self.couponView.frame.size.width, 396);
                 self.couponView.frame = frame;
             } completion:^(BOOL finished) {
                 
             }];
         }
+        
+        // Markeer als gearchiveerd
+        
+        [archivedCoupons addObject:@"coupon"];
     }
     else
     {
@@ -242,6 +252,7 @@
     {
         CLBeacon *beacon = currentBeacons[0];
         
+        
         if (([beacon.major integerValue] == 1) && ([beacon.minor integerValue] == 1))
         {
             
@@ -252,20 +263,10 @@
             {
                 if (!seatViewVisible)
                 {
-                    [self seatViewTapped:self];
-                    
-                    /*UILocalNotification *notification = [[UILocalNotification alloc] init];
-                    if (notification == nil)
+                    if (![archivedCoupons containsObject:@"seat"])
                     {
-                        return;
+                        [self seatViewTapped:self];
                     }
-                    
-                    notification.alertBody = @"Your seat indicator";
-                    notification.soundName = UILocalNotificationDefaultSoundName;
-                    
-                    [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
-                    
-                    seatViewVisible = YES;*/
                 }
             }
         }
@@ -275,7 +276,10 @@
             {
                 if (!couponViewVisible)
                 {
-                    [self couponViewTapped:self];
+                    if (![archivedCoupons containsObject:@"coupon"])
+                    {
+                        [self couponViewTapped:self];
+                    }
                 }
             }
         }
