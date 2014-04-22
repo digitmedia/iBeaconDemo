@@ -445,7 +445,7 @@
 				ORGANIZATIONNAME = "Spencer Pieters";
 				TargetAttributes = {
 					823B8E8518191316007DBDC7 = {
-						DevelopmentTeam = 5NK7J9N65N;
+						DevelopmentTeam = XCYFHUJLF6;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -456,7 +456,7 @@
 						TestTargetID = 823B8E8518191316007DBDC7;
 					};
 					8ECAAE1C18FEB1650084ECC1 = {
-						DevelopmentTeam = 5NK7J9N65N;
+						DevelopmentTeam = XCYFHUJLF6;
 					};
 				};
 			};
