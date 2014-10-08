@@ -257,7 +257,7 @@
         {
             
         }
-        else if (([beacon.major integerValue] == 1) && ([beacon.minor integerValue] == 4))
+        else if (([beacon.major integerValue] == 1) && ([beacon.minor integerValue] == 9))
         {
             if ((beacon.proximity == CLProximityImmediate))
             {
@@ -270,7 +270,7 @@
                 }
             }
         }
-        else if (([beacon.major integerValue] == 1) && ([beacon.minor integerValue] == 5))
+        else if (([beacon.major integerValue] == 1) && ([beacon.minor integerValue] == 10))
         {
             if ((beacon.proximity == CLProximityImmediate))
             {
