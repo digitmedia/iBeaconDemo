@@ -27,13 +27,18 @@
     
     manager = [[CLLocationManager alloc] init];
     manager.delegate = self;
-    [manager startUpdatingLocation];
-    
-    // ba74d9f8-a327-4b4c-b595-67980540f27c
-    NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"ba74d9f8-a327-4b4c-b595-67980540f27c"];
-    
-    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
-    [manager startRangingBeaconsInRegion:region];
+
+    if ([manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [manager requestWhenInUseAuthorization];
+    } else {
+        [manager startUpdatingLocation];
+
+        // ba74d9f8-a327-4b4c-b595-67980540f27c
+        NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"ba74d9f8-a327-4b4c-b595-67980540f27c"];
+        
+        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
+        [manager startRangingBeaconsInRegion:region];
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate
@@ -62,6 +67,29 @@
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error
 {
     [self performSegueWithIdentifier:@"segueMacro" sender:self];
+}
+
+- (void)       locationManager: (CLLocationManager*)    manager
+  didChangeAuthorizationStatus: (CLAuthorizationStatus) status
+{
+    switch (status) {
+        case kCLAuthorizationStatusAuthorizedAlways:
+        case kCLAuthorizationStatusAuthorizedWhenInUse: {
+            [manager startUpdatingLocation];
+
+            // ba74d9f8-a327-4b4c-b595-67980540f27c
+            NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"ba74d9f8-a327-4b4c-b595-67980540f27c"];
+            
+            CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
+            [manager startRangingBeaconsInRegion:region];
+        } break;
+
+        case kCLAuthorizationStatusNotDetermined: {
+        } break;
+
+        default: {
+        }
+    }
 }
 
 #pragma mark - Storyboards

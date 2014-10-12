@@ -32,16 +32,21 @@
     
     manager = [[CLLocationManager alloc] init];
     manager.delegate = self;
-    [manager startUpdatingLocation];
-    
-    // ba74d9f8-a327-4b4c-b595-67980540f27c
-    NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"ba74d9f8-a327-4b4c-b595-67980540f27c"];
-    
-    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
-    region.notifyEntryStateOnDisplay = YES;
-    [manager startRangingBeaconsInRegion:region];
-    [manager startMonitoringForRegion:region];
-    
+
+    if ([manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [manager requestWhenInUseAuthorization];
+    } else {
+        [manager startUpdatingLocation];
+
+        // ba74d9f8-a327-4b4c-b595-67980540f27c
+        NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"ba74d9f8-a327-4b4c-b595-67980540f27c"];
+        
+        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
+        region.notifyEntryStateOnDisplay = YES;
+        [manager startRangingBeaconsInRegion:region];
+        [manager startMonitoringForRegion:region];
+    }
+
     UITapGestureRecognizer *r1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(seatViewTapped:)];
     [self.seatView addGestureRecognizer:r1];
     
@@ -57,6 +62,7 @@
     tileOverlay.maximumZ = 21;
     [_mapViewMain addOverlay:tileOverlay];
 }
+
 
 #pragma mark - actions
 
@@ -334,6 +340,31 @@
     notification.soundName = UILocalNotificationDefaultSoundName;
     
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+}
+
+- (void)       locationManager: (CLLocationManager*)    manager
+  didChangeAuthorizationStatus: (CLAuthorizationStatus) status
+{
+    switch (status) {
+        case kCLAuthorizationStatusAuthorizedAlways:
+        case kCLAuthorizationStatusAuthorizedWhenInUse: {
+            [manager startUpdatingLocation];
+
+            // ba74d9f8-a327-4b4c-b595-67980540f27c
+            NSUUID *id = [[NSUUID alloc] initWithUUIDString:@"ba74d9f8-a327-4b4c-b595-67980540f27c"];
+            
+            CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:id identifier:@"id1"];
+            region.notifyEntryStateOnDisplay = YES;
+            [manager startRangingBeaconsInRegion:region];
+            [manager startMonitoringForRegion:region];
+        } break;
+
+        case kCLAuthorizationStatusNotDetermined: {
+        } break;
+
+        default: {
+        }
+    }
 }
 
 #pragma mark - MKMapViewDelegate
